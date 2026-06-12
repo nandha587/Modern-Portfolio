@@ -1,50 +1,32 @@
 import Link from "next/link";
 
 import {
-  RiYoutubeLine,
-  RiInstagramLine,
-  RiFacebookLine,
-  RiDribbbleLine,
+  RiLinkedinLine,
   RiGithubLine,
-  RiPinterestLine,
+  RiMailLine,
 } from "react-icons/ri";
 
 export const socialData = [
   {
-    name: "YouTube",
-    link: "https://youtube.com",
-    Icon: RiYoutubeLine,
-  },
-  {
-    name: "Instagram",
-    link: "https://instagram.com",
-    Icon: RiInstagramLine,
-  },
-  {
-    name: "Facebook",
-    link: "https://facebook.com",
-    Icon: RiFacebookLine,
-  },
-  {
-    name: "Dribbble",
-    link: "https://dribbble.com",
-    Icon: RiDribbbleLine,
-  },
-  {
-    name: "Pinterest",
-    link: "https://pinterest.com",
-    Icon: RiPinterestLine,
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/nandha-kishore-d-b49bb2289",
+    Icon: RiLinkedinLine,
   },
   {
     name: "Github",
-    link: "https://github.com/sanidhyy/modern-portfolio",
+    link: "https://github.com/nandha587",
     Icon: RiGithubLine,
+  },
+  {
+    name: "Email",
+    link: "mailto:nandhakishoredineshkumar@gmail.com",
+    Icon: RiMailLine,
   },
 ];
 
 const Socials = () => {
   return (
-    <div className="flex items-center gap-x-5 text-lg">
+    <div className="flex items-center gap-x-3 text-sm flex-wrap gap-y-2">
       {socialData.map((social, i) => (
         <Link
           key={i}
@@ -52,14 +34,10 @@ const Socials = () => {
           href={social.link}
           target="_blank"
           rel="noreferrer noopener"
-          className={`${
-            social.name === "Github"
-              ? "bg-accent rounded-full p-[5px] hover:text-white"
-              : "hover:text-accent"
-          } transition-all duration-300`}
+          className="flex items-center gap-x-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 group text-white"
         >
-          <social.Icon aria-hidden />
-          <span className="sr-only">{social.name}</span>
+          <social.Icon className="text-base group-hover:scale-110 transition-transform" aria-hidden />
+          <span className="font-medium">{social.name}</span>
         </Link>
       ))}
     </div>

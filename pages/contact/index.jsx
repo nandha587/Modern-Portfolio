@@ -31,8 +31,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="h-full bg-primary/30">
-      <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+    <div className="min-h-screen bg-primary/30 flex items-center pt-36 pb-20">
+      <div className="container mx-auto text-center xl:text-left flex items-center justify-center">
         {/* text & form */}
         <div className="flex flex-col w-full max-w-[700px]">
           {/* text */}
