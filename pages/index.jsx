@@ -6,6 +6,10 @@ import Avatar from "../components/Avatar";
 
 import { fadeIn } from "../variants";
 
+const avatarVariants = {
+  hover: { rotate: 360 },
+};
+
 const Home = () => {
   return (
     <div className="bg-primary/60 min-h-screen flex items-center relative overflow-hidden">
@@ -72,12 +76,17 @@ const Home = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        whileHover={{ rotate: 360 }}
-        whileTap={{ rotate: 360 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        whileHover="hover"
+        whileTap="hover"
         className="hidden lg:flex w-[380px] h-[450px] absolute lg:bottom-[10%] lg:right-[12%] rounded-2xl overflow-hidden border-2 border-accent/40 shadow-[0_0_50px_rgba(241,48,36,0.25)] bg-primary/20 backdrop-blur-sm z-20 cursor-pointer"
       >
-        <Avatar />
+        <motion.div
+          variants={avatarVariants}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="w-full h-full flex items-center justify-center"
+        >
+          <Avatar />
+        </motion.div>
       </motion.div>
     </div>
   );
