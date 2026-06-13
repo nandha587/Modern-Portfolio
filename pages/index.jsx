@@ -72,17 +72,12 @@ const Home = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className="hidden lg:flex w-[380px] h-[450px] absolute lg:bottom-[10%] lg:right-[12%] rounded-2xl overflow-hidden border-2 border-accent/40 shadow-[0_0_50px_rgba(241,48,36,0.25)] bg-primary/20 backdrop-blur-sm z-20"
+        whileHover={{ rotate: 360 }}
+        whileTap={{ rotate: 360 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="hidden lg:flex w-[380px] h-[450px] absolute lg:bottom-[10%] lg:right-[12%] rounded-2xl overflow-hidden border-2 border-accent/40 shadow-[0_0_50px_rgba(241,48,36,0.25)] bg-primary/20 backdrop-blur-sm z-20 cursor-pointer"
       >
-        <motion.div
-          className="w-full h-full flex items-center justify-center cursor-pointer"
-          whileHover={{ rotate: 360 }}
-          whileTap={{ rotate: 360 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-        >
-          <Avatar />
-        </motion.div>
+        <Avatar />
       </motion.div>
     </div>
   );
