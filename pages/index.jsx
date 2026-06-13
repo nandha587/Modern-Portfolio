@@ -7,6 +7,7 @@ import Avatar from "../components/Avatar";
 import { fadeIn } from "../variants";
 
 const avatarVariants = {
+  initial: { rotate: 0 },
   hover: { rotate: 360 },
 };
 
@@ -82,6 +83,7 @@ const Home = () => {
       >
         <motion.div
           variants={avatarVariants}
+          initial="initial"
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="w-full h-full flex items-center justify-center"
         >
