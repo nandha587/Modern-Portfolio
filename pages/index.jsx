@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
@@ -7,6 +8,11 @@ import Avatar from "../components/Avatar";
 import { fadeIn } from "../variants";
 
 const Home = () => {
+  const [spin, setSpin] = useState(0);
+
+  const handleAvatarClick = () => {
+    setSpin((prev) => prev + 360);
+  };
   return (
     <div className="bg-primary/60 min-h-screen flex items-center">
       {/* text */}
@@ -71,9 +77,16 @@ const Home = () => {
           animate="show"
           exit="hidden"
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="hidden lg:flex w-[380px] h-[450px] absolute lg:bottom-[10%] lg:right-[12%] rounded-2xl overflow-hidden border-2 border-accent/40 shadow-[0_0_50px_rgba(241,48,36,0.25)] bg-primary/20 backdrop-blur-sm pointer-events-auto"
+          className="hidden lg:flex w-[380px] h-[450px] absolute lg:bottom-[10%] lg:right-[12%] rounded-2xl overflow-hidden border-2 border-accent/40 shadow-[0_0_50px_rgba(241,48,36,0.25)] bg-primary/20 backdrop-blur-sm pointer-events-auto cursor-pointer"
         >
-          <Avatar />
+          <motion.div
+            className="w-full h-full"
+            animate={{ rotate: spin }}
+            onClick={handleAvatarClick}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            <Avatar />
+          </motion.div>
         </motion.div>
       </div>
     </div>
