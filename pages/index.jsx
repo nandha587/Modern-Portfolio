@@ -78,6 +78,7 @@ const Home = () => {
         <motion.div
           className="w-full h-full flex items-center justify-center cursor-pointer"
           whileHover={{ rotate: 360 }}
+          whileTap={{ rotate: 360 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <Avatar />
